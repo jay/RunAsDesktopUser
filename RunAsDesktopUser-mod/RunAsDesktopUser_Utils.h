@@ -1,5 +1,13 @@
 #pragma once
 
+#include <Windows.h>
+
+#include <iomanip>
+#include <ios>
+#include <ostream>
+#include <sstream>
+#include <string>
+
 // ------------------------------------------------------------------------------------------
 // Structure and operators to insert a zero-filled hex-formatted number into a std::ostream.
 struct HEX
@@ -13,8 +21,9 @@ struct HEX
 	bool m_upcase;
 };
 
-inline ostream& operator << ( ostream& os, const HEX & h )
+inline std::ostream& operator << ( std::ostream& os, const HEX & h )
 {
+  using namespace std;
 	int fmt = os.flags();
 	char fillchar = os.fill('0');
 	os << "0x" << hex << (h.m_upcase ? uppercase : nouppercase) << setw(h.m_width) << h.m_num ;
@@ -23,8 +32,9 @@ inline ostream& operator << ( ostream& os, const HEX & h )
 	return os;
 }
 
-inline wostream& operator << ( wostream& os, const HEX & h )
+inline std::wostream& operator << ( std::wostream& os, const HEX & h )
 {
+  using namespace std;
 	int fmt = os.flags();
 	wchar_t fillchar = os.fill(L'0');
 	os << L"0x" << hex << (h.m_upcase ? uppercase : nouppercase) << setw(h.m_width) << h.m_num ;
@@ -40,6 +50,7 @@ inline wostream& operator << ( wostream& os, const HEX & h )
 
 inline std::wstring SysErrorMessageWithCode(DWORD dwErrCode /*= GetLastError()*/)
 {
+  using namespace std;
 	LPWSTR pszErrMsg = NULL;
 	wstringstream sRetval;
 	DWORD flags =

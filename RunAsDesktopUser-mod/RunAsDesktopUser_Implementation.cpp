@@ -1,5 +1,8 @@
-#include "stdafx.h"
+#include <sstream>
+
 #include "RunAsDesktopUser_Utils.h"
+
+using namespace std;
 
 // Definition of the function this sample is all about.
 // The szApp, szCmdLine, szCurrDir, si, and pi parameters are passed directly to CreateProcessWithTokenW.
@@ -44,6 +47,7 @@ bool RunAsDesktopUser(
 		}
 	}
 
+retry:
 	// Get an HWND representing the desktop shell.
 	// CAVEATS:  This will fail if the shell is not running (crashed or terminated), or the default shell has been
 	// replaced with a custom shell.  This also won't return what you probably want if Explorer has been terminated and
@@ -71,6 +75,17 @@ bool RunAsDesktopUser(
 		sErrorInfo << L"Can't open desktop shell process:  " << SysErrorMessageWithCode(dwLastErr);
 		return false;
 	}
+
+  // Make sure window and process id are still the same (ie we've opened the right process)
+  if(hwnd != GetShellWindow()) {
+    CloseHandle(hShellProcess);
+    goto retry;
+  }
+  GetWindowThreadProcessId(hwnd, &dwPID);
+  if(dwPID != GetProcessId(hShellProcess)) {
+    CloseHandle(hShellProcess);
+    goto retry;
+  }
 
 	// From this point down, we have handles to close, so make sure to clean up.
 

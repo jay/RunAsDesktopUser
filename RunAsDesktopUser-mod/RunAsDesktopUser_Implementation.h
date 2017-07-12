@@ -1,5 +1,7 @@
 #pragma once
 
+#include <sstream>
+
 // Declaration of the function this sample is all about.
 // The szApp, szCmdLine, szCurrDir, si, and pi parameters are passed directly to CreateProcessWithTokenW.
 // sErrorInfo returns text describing any error that occurs.
@@ -11,5 +13,5 @@ bool RunAsDesktopUser(
   __in    const wchar_t *       szCurrDir,
   __in    STARTUPINFOW &        si,
   __inout PROCESS_INFORMATION & pi,
-  __inout wstringstream &       sErrorInfo);
+  __inout std::wstringstream &       sErrorInfo);
 
