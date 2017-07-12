@@ -5,7 +5,7 @@
 #include "stdafx.h"
 #include "RunAsDesktopUser.h"
 #include "RunAsDesktopUserDlg.h"
-#include "Utils.h"
+#include "RunAsDesktopUser_Utils.h"
 #include "RunAsDesktopUser_Implementation.h"
 
 #ifdef _DEBUG

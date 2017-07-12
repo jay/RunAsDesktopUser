@@ -427,7 +427,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Utils.h"
+				RelativePath=".\RunAsDesktopUser_Utils.h"
 				>
 			</File>
 		</Filter>

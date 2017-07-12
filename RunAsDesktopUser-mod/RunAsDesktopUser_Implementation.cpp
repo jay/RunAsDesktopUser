@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Utils.h"
+#include "RunAsDesktopUser_Utils.h"
 
 // Definition of the function this sample is all about.
 // The szApp, szCmdLine, szCurrDir, si, and pi parameters are passed directly to CreateProcessWithTokenW.
