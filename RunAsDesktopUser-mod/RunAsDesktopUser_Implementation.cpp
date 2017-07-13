@@ -1,3 +1,20 @@
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+// PARTICULAR PURPOSE.
+//
+// Copyright (c) Microsoft Corporation. All rights reserved
+// Copyright (c) 2009 Aaron Margosis
+// Copyright (C) 2017 Jay Satiro <raysatiro@yahoo.com>
+//
+// RunAsDesktopUser() has been modified to confirm the right process was opened, and retry if not.
+//
+// Unmodified project at:
+// https://blogs.msdn.microsoft.com/aaron_margosis/2009/06/06/faq-how-do-i-start-a-program-as-the-desktop-user-from-an-elevated-app/
+//
+// MIT License:
+// https://github.com/jay/RunAsDesktopUser/blob/master/LICENSE
+
 #include <sstream>
 
 #include "RunAsDesktopUser_Utils.h"

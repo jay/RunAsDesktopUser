@@ -21,12 +21,18 @@
     <ClCompile Include="RunAsDesktopUser_Implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ExecInExplorer-mod\ExecInExplorer-mod\ExecInExplorer_Util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RunAsDesktopUser_Implementation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RunAsDesktopUser_Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExecInExplorer-mod\ExecInExplorer-mod\ExecInExplorer_Util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

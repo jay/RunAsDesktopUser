@@ -54,6 +54,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>ExecInExplorer-mod\ExecInExplorer-mod;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -70,6 +71,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>ExecInExplorer-mod\ExecInExplorer-mod;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -79,10 +81,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ExecInExplorer-mod\ExecInExplorer-mod\ExecInExplorer_Util.cpp" />
     <ClCompile Include="RunAsDesktopUser.cpp" />
     <ClCompile Include="RunAsDesktopUser_Implementation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ExecInExplorer-mod\ExecInExplorer-mod\ExecInExplorer_Util.h" />
     <ClInclude Include="RunAsDesktopUser_Implementation.h" />
     <ClInclude Include="RunAsDesktopUser_Utils.h" />
   </ItemGroup>
