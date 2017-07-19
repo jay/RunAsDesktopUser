@@ -68,6 +68,14 @@ I made changes similar to what I made in RunAsDesktopUser, however due to
 limitations of the method there is no synchronous execution of the command
 line.
 
+### Using explorer.exe for the same purpose
+
+If explorer.exe is running it's possible to execute a program in that context
+by using the full path to the program as the first argument, for example
+`explorer.exe "C:\foo bar\baz"`. Program arguments are not accepted.
+Unfortunately this feature is undocumented, has been called a bug and may
+[disappear one day](http://mdb-blog.blogspot.com/2013/01/nsis-lunch-program-as-user-from-uac.html?showComment=1388694317801#c939517856791332836).
+
 ### Incorrect exit code when run from Windows Command Prompt?
 
 RunAsDesktopUser uses the Windows subsystem not the console subsystem, which
