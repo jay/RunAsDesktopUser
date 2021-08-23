@@ -21,8 +21,8 @@ program if the desktop user's shell isn't running as admin).
 Use option `--fallback-current-user` to fall back to executing in the context
 of the current user running this program if that user is not running the
 program with administrator privileges. If you do not use this option and are
-not running this program as an administrator then it's likely this program will
-be unable to obtain the required permissions and will have no effect.
+not running this program as an administrator then this program will have no
+effect.
 
 Use option `--use-current-directory` to use this program's current directory or
 optionally 'dir'. Due to the command line being parsed as raw data in order to
@@ -58,7 +58,7 @@ RunAsDesktopUser works by calling function
 [CreateProcessWithTokenW](https://msdn.microsoft.com/en-us/library/ms682434.aspx)
 if the program has admin privileges or
 [CreateProcessW](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682425.aspx)
-if the program doesn't have admin privileges and option --wait-for-exit-code
+if the program doesn't have admin privileges and option --fallback-current-user
 was used.
 
 [Microsoft's ExecInExplorer sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appplatform/ExecInExplorer),
